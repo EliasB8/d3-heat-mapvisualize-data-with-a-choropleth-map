@@ -4,7 +4,9 @@
   "description": "A Pen created on CodePen.io. Original URL: [https://codepen.io/eliasb8-the-reactor/pen/LYNwOwa](https://codepen.io/eliasb8-the-reactor/pen/LYNwOwa).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src",
+    "sass": "node-sass --watch src -o src"
   },
   "keywords": [],
   "author": "",

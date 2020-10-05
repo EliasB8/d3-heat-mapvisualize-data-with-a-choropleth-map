@@ -1,52 +1,36 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #dbcbbd;
-}
+  background-color: #dbcbbd; }
 
 .axis {
-  font-size: 0.85rem;
-}
+  font-size: 0.85rem; }
 
 .container {
   margin: 0 auto;
   text-align: center;
-  padding: 1.5rem;
-
-  #title {
+  padding: 1.5rem; }
+  .container #title {
     padding: 1.5rem;
-    font-size: 3rem;
-  }
-
-  #description {
+    font-size: 3rem; }
+  .container #description {
     font-size: 1.35rem;
-    padding-bottom: 1.25rem;
-  }
-
-  footer {
+    padding-bottom: 1.25rem; }
+  .container footer {
     padding: 2rem;
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100%;
-  }
-}
-
-
-// .counties{
-//   fill: none;
-// }
+    width: 100%; }
 
 .states {
   fill: none;
   stroke: #fff;
-  stroke-linejoin: round;
-}
+  stroke-linejoin: round; }
 
 .tooltip {
   position: absolute;
@@ -55,22 +39,15 @@ body {
   padding: 0.5rem;
   z-index: 10;
   pointer-events: none;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
-.cell {
-  &:hover {
-    fill: #142850;
-  }
-}
+.cell:hover {
+  fill: #142850; }
 
 span.hover-info {
   display: block;
   padding: .25rem;
-  text-align: left;
-
-  &:first-child {
+  text-align: left; }
+  span.hover-info:first-child {
     font-size: 1.25rem;
-    text-align: center;
-  }
-}
+    text-align: center; }
