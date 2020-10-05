@@ -1,0 +1,16 @@
+{
+  "name": "d3-heat-mapvisualize-data-with-a-choropleth-map",
+  "version": "1.0.0",
+  "description": "A Pen created on CodePen.io. Original URL: [https://codepen.io/eliasb8-the-reactor/pen/LYNwOwa](https://codepen.io/eliasb8-the-reactor/pen/LYNwOwa).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.1.0",
+    "node-sass": "^4.14.1"
+  }
+}
