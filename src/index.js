@@ -18,7 +18,7 @@ async function main() {
   //   Fetching US counties data
   const usResp = await fetch('https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json');
 
-  //   Parsing the datas from API's
+  //   Parsing the data from the APIs
   const education = await eduResp.json();
   const usCounties = await usResp.json();
 
@@ -55,11 +55,13 @@ async function main() {
     .on("mouseover", (event, d) => {
       tooltip.style("opacity", 1);
 
+      // Adding data education attribute
       tooltip.attr("data-education", () => {
         let result = education.filter(ed => ed.fips === d.id);
         return result[0] ? result[0].bachelorsOrHigher : 0;
       });
 
+      // Setting content for tooltip
       tooltip.html(() => {
         let result = education.filter(ed => ed.fips === d.id);
         if (result[0]) {
@@ -68,11 +70,13 @@ async function main() {
         return 0;
       });
 
+      // Choosing spot for tooltip
       tooltip.style("left", (event.pageX + 14) + "px");
       tooltip.style("top", (event.pageY - 28) + "px");
     })
     .on("mouseout", () => tooltip.style("opacity", 0));
 
+  // Drawing line between states
   svg.append('path')
     .datum(
       topojson.mesh(usCounties, usCounties.objects.states, function (a, b) {
@@ -82,14 +86,15 @@ async function main() {
     .attr('class', 'states')
     .attr('d', path);
 
+  // Generating legend
   const legendHeight = 15;
   const legendWidth = 300 / 8;
 
+  // Creating legend
   const legend = svg.append("g")
-    .attr("id", "legend")
-    .attr("width", 300)
-    .attr("height", 70);
+    .attr("id", "legend");
 
+  // Drawing the color legends 
   legend.selectAll("rect")
     .data(colorScale.domain())
     .enter()
@@ -113,8 +118,6 @@ async function main() {
   legend.append("g")
     .attr("transform", `translate(${svg.attr("width") - 380},${legendHeight*1.5})`)
     .call(legendAxis);
-
-
 }
 
 main();
